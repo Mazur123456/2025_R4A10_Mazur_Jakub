@@ -1,0 +1,41 @@
+.grid{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    grid-template-columns: repeat(1,1fr);
+}
+
+.card{
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+}
+
+@media screen and (width>=600px){
+    .grip{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (width>=1024px){
+    .grip{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (width>=1200px) and (width<2000px){
+    .grip{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+.bar{
+    border: 1px solid black;
+    width:100%;
+}
+
+
+footer{
+    position: absolute; 
+    bottom: 0;
+}
