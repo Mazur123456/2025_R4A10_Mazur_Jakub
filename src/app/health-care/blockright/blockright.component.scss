@@ -1,0 +1,14 @@
+.right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    img {
+      width: 200%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+  
