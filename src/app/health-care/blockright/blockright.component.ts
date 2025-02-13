@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './blockright.component.scss'
 })
 export class BlockrightComponent {
-  imageSrc: string = "assets/images/healthcare.png";
+  imageB1: string = "assets/images/block1/healthcare.png";
 }

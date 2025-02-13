@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './logo-header.component.scss'
 })
 export class LogoHeaderComponent {
-
+  imageHeader: string = "assets/images/header/logo1.PNG";
+  title="Trafalgar";
 }

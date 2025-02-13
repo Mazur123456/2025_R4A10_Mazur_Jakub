@@ -10,5 +10,5 @@ import { BlockrightComponent } from './blockright/blockright.component';
   styleUrl: './health-care.component.scss'
 })
 export class HealthCareComponent {
-
+  
 }

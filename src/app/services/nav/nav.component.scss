@@ -1,0 +1,52 @@
+.nav-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  
+    // Par défaut : 6 colonnes
+    grid-template-columns: repeat(6, 1fr);
+  
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr); // 3 colonnes sur tablettes
+    }
+  
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // 2 colonnes sur petits écrans
+    }
+  
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(1, 1fr); // 1 colonne sur mobiles
+    }
+  }
+  
+  .nav-block {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+  
+    h3 {
+      font-size: 1.2rem;
+      color: black;
+    }
+  
+    p {
+      font-size: 1rem;
+      color: #7D7987;
+    }
+  }
+  

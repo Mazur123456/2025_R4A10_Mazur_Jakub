@@ -1,0 +1,10 @@
+<nav class="nav-container">
+    @for (block of blocks; track block) {
+        <div class="nav-block" >
+            <img [src]="block.logo" alt="Logo">
+            <h3>{{ block.title }}</h3>
+            <p>{{ block.description }}</p>
+        </div>
+        }
+</nav>
+  
