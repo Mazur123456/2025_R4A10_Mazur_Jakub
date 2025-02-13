@@ -5,27 +5,26 @@
     max-width: 1200px;
     margin: 0 auto;
   
-    // Par défaut : 6 colonnes
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 2fr);
   
     @media (max-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr); // 3 colonnes sur tablettes
+      grid-template-columns: repeat(3, 1fr);
     }
   
     @media (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr); // 2 colonnes sur petits écrans
+      grid-template-columns: repeat(2, 1fr); 
     }
   
     @media (max-width: 480px) {
-      grid-template-columns: repeat(1, 1fr); // 1 colonne sur mobiles
+      grid-template-columns: repeat(1, 1fr); 
     }
   }
   
   .nav-block {
-    background-color: #f8f9fa;
-    padding: 15px;
+    background-color: white;
+    padding: 30px;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
   

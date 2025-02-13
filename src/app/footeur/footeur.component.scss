@@ -1,7 +1,22 @@
 .footer-container {
-    background: linear-gradient(to bottom, #67C3F3, #5A98F2); /* Dégradé de vert clair à vert foncé */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 1rem;
-  }
+  display: flex; 
+  justify-content: space-between;
+  align-items: flex-start; 
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to bottom, #2c3e50, #34495e);
+  color: white;
+}
+
+/* Partie titre qui prend 1/3 */
+.footer-title {
+  width: 33%;
+}
+
+/* Partie nav qui prend 2/3 */
+.footer-content {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
