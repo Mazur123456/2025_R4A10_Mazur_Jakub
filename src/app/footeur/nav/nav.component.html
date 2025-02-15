@@ -1,5 +1,12 @@
-<div >
-    <nav>
-    </nav>
-</div>
-  
+<ul class="footer-grid">
+    @for (info of allNavs; track info) {
+    <li class="footer-column">
+        <h3>{{ info.title }}</h3>
+        <ul>
+            @for (page of info.listesPages; track page) {
+            <li><a [href]="page.href">{{ page.titleLink }}</a></li>
+            }
+        </ul>
+    </li>
+    }
+</ul>

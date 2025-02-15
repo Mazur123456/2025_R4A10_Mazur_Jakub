@@ -1,0 +1,24 @@
+.container {
+  font-family: Arial, sans-serif;
+  height: 25vh; /* Prendre toute la hauteur de la fenêtre */
+  background: linear-gradient(to top, #67C3F3, #5A98F2);  
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  display: flex;
+}
+.title {
+  font-size: 36px;
+  margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.divider {
+  width: 10%; /* Largeur du trait horizontal */
+  border: 1px solid white; /* Couleur du trait */
+  margin-bottom: 20px; /* Espacement sous le trait horizontal */
+}
+

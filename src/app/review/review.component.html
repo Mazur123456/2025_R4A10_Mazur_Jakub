@@ -1,1 +1,9 @@
-<p>review works!</p>
+<div class="container">
+  <h1 class="title">What our customer are saying</h1>
+  <hr class="divider" />
+
+  <app-customer [reviewId]="reviewId"></app-customer>
+</div>
+
+<app-button (nextReview)="onAvisChange($event)"></app-button>
+

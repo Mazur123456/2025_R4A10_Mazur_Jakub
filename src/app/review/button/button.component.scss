@@ -1,0 +1,11 @@
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espace entre les flèches */
+}
+
+.arrow {
+    font-size: 24px;
+    cursor: pointer;
+}

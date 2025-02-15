@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { allNavs } from './navsfooteur';
+import { InfoNavs } from './navsinfofooteur';
 
 @Component({
   selector: 'app-nav',
@@ -8,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './nav.component.scss'
 })
 export class NavComponent {
-
+  allNavs: InfoNavs[] = allNavs;
 }

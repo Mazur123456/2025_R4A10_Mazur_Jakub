@@ -1,22 +1,33 @@
-.footer-container {
-  display: flex; 
+footer{
+  background: linear-gradient(to top, #67C3F3, #5A98F2);
+  padding: 10px 50px;
+  display: flex;
   justify-content: space-between;
-  align-items: flex-start; 
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to bottom, #2c3e50, #34495e);
-  color: white;
+  align-items: center;
+  font-family: Arial, sans-serif;
 }
 
-/* Partie titre qui prend 1/3 */
-.footer-title {
+.left {
   width: 33%;
 }
 
-/* Partie nav qui prend 2/3 */
-.footer-content {
+.right {
   width: 66%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+}
+
+
+@media screen and (min-width: 1200px) {
+  .app-trafalgar {
+      margin: 5em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app-trafalgar {
+      width: 50%;
+  }
+
+  .app-footer-information {
+      margin-top: 2em;
+  }
 }
