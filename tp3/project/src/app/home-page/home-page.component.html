@@ -1,0 +1,23 @@
+<p>Bienvenue sur la Home Page des Destinations</p>
+
+<div class="destinations-container">
+  @for (destination of destinations; track $index) {
+    <div class="destination-card">
+      <h3>{{ destination }}</h3>
+      <p>{{ descriptions[$index] }}</p>
+      <p class="price">{{ prix[$index] }} €</p>
+      <button (click)="onDestinationClick($index)">Voir les détails</button>
+    </div>
+  }
+</div>
+
+@if (showDialog) {
+  <div class="overlay">
+    <div class="modal">
+      <h2>Navigation</h2>
+      <p>Vous allez naviguer vers la destination {{ destinations[selectedID] }}, êtes-vous sûr ?</p>
+      <button (click)="onNavigation()">Oui</button>
+      <button (click)="onDialogClose()">Annuler</button>
+    </div>
+  </div>
+}

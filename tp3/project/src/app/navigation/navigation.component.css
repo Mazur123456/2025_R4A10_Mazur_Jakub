@@ -1,0 +1,53 @@
+header {
+  background-color: antiquewhite;
+  padding-block: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-logo {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: x-large;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.current {
+  color: green;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.main-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacement entre le logo et le texte */
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo {
+  width: 30px; /* Ajuste la taille selon ton besoin */
+  height: auto;
+}
