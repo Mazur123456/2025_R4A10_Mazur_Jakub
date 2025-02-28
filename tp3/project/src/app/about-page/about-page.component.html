@@ -1,1 +1,16 @@
-<p>about-page works!</p>
+<div class="about-page">
+    <h2>Détails du voyage</h2>
+  
+    @if (voyage) {
+      <div class="voyage-details">
+        <h3>{{ voyage.destination }}</h3>
+        <p>{{ voyage.description }}</p>
+        <p class="price">{{ voyage.prix}} €</p>
+        <button (click)="deleteVoyage()">Supprimer ce voyage</button>
+      </div>
+    } @else {
+      <p>Ce voyage n'existe pas.</p>
+    }
+  
+    <button (click)="navigateToHome()">Retour à l'accueil</button>
+  </div>

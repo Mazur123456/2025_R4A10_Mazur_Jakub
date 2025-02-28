@@ -1,0 +1,8 @@
+@if (voyage) {
+    <div>
+      <h2>{{ voyage.destination }}</h2>
+      <p>{{ voyage.description }}</p>
+      <p>{{ voyage.prix | currency:'EUR' }}</p>
+      <button (click)="deleteVoyage()" class="btn btn-danger">Supprimer ce voyage</button>
+    </div>
+  }

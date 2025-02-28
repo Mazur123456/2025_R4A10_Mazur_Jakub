@@ -1,34 +1,37 @@
 header {
-  background-color: antiquewhite;
   padding-block: 10px;
+  color: white; /* Couleur par défaut pour le texte dans le header */
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .main-logo {
   text-decoration: none;
   font-weight: bold;
   font-size: x-large;
+  color: white; /* Couleur blanche pour le logo */
+}
 
-  &:hover {
-    color: red;
-  }
+.main-logo:hover {
+  color: rgb(255, 208, 0); /* Couleur au survol */
 }
 
 .current {
-  color: green;
+  color: rgb(255, 208, 0); /* Couleur pour la page actuelle */
 }
 
 nav a {
   text-decoration: none;
+  color: white; /* Couleur blanche pour les liens de navigation */
 }
 
-p {
-  margin: 0;
+nav a:hover {
+  color: rgb(255, 208, 0); /* Couleur au survol */
 }
 
 ul {

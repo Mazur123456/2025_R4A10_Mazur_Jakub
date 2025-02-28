@@ -1,1 +1,28 @@
-<p>generate-page works!</p>
+<div class="generate-page">
+  <h2>Générer un voyage</h2>
+
+  @if (destination) {
+    <div class="generated-voyage">
+      <h3>{{ destination }}</h3>
+      <p>{{ description }}</p>
+      <p class="price">{{ prix}}</p>
+    </div>
+  }
+
+  <div class="actions">
+    <button (click)="generateVoyage()">Générer un nouveau voyage</button>
+    <button (click)="onDialogOpen()" >Valider et ajouter</button>
+  </div>
+
+  @if (showDialog) {
+    <div class="overlay">
+      <div class="modal">
+        <h2>Navigation</h2>
+        <p>Etes-vous sûr de vouloir valider le voyage?</p>
+        <button (click)="addVoyage()" [disabled]="!destination">Oui</button>
+        <button (click)="onDialogClose()">Annuler</button>
+      </div>
+    </div>
+  }
+  
+</div>
