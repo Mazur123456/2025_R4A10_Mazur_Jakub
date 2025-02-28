@@ -35,13 +35,30 @@ footer, header {
   padding-block: 10px;
 }
 
+
 footer {
   margin-top: auto;
-  position: fixed; /* Fixe le footer en bas de l'écran */
-  bottom: 0;       /* Le colle en bas */
-  left: 0;         /* S'étend sur toute la largeur */
-  width: 100%;     /* Prend toute la largeur de la page */
-  padding: 20px; /* Espacement intérieur */
-  text-align: center; /* Centrer le texte */
-  background-color: #3d3d3d; /* Couleur de fond */
+  position: fixed; 
+  bottom: 0;       
+  left: 0;         
+  width: 100%;     
+  padding: 20px; 
+  text-align: center; 
+  background-color: #3d3d3d; 
+}
+
+footer .container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+footer h3 {
+  margin: 0; 
+  font-size: 24px; 
+}
+
+footer p {
+  margin: 10px 0 0; 
+  font-size: 14px;
 }

@@ -1,6 +1,6 @@
 header {
   padding-block: 10px;
-  color: white; /* Couleur par défaut pour le texte dans le header */
+  color: white; 
 }
 
 .container {
@@ -14,24 +14,24 @@ header {
   text-decoration: none;
   font-weight: bold;
   font-size: x-large;
-  color: white; /* Couleur blanche pour le logo */
+  color: white; 
 }
 
 .main-logo:hover {
-  color: rgb(255, 208, 0); /* Couleur au survol */
+  color: rgb(255, 208, 0); 
 }
 
 .current {
-  color: rgb(255, 208, 0); /* Couleur pour la page actuelle */
+  color: rgb(255, 208, 0); 
 }
 
 nav a {
   text-decoration: none;
-  color: white; /* Couleur blanche pour les liens de navigation */
+  color: white; 
 }
 
 nav a:hover {
-  color: rgb(255, 208, 0); /* Couleur au survol */
+  color: rgb(255, 208, 0); 
 }
 
 ul {
@@ -44,13 +44,13 @@ ul {
 .main-logo {
   display: flex;
   align-items: center;
-  gap: 8px; /* Espacement entre le logo et le texte */
+  gap: 8px;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
 }
 
 .logo {
-  width: 30px; /* Ajuste la taille selon ton besoin */
+  width: 30px; 
   height: auto;
 }

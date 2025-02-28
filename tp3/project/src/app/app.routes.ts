@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: 'generation-voyages', component: GeneratePageComponent },
   { path: '404',component: NotFoundPageComponent,},
   { path: '**', component: NotFoundPageComponent }
-  // autres routes ici...
+ 
 ];
 
 @NgModule({
