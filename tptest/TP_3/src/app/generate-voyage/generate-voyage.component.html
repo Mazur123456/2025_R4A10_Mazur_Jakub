@@ -1,7 +1,0 @@
-<div *ngIf="generatedVoyage" class="generated-voyage">
-    <h2>{{ generatedVoyage.destination }}</h2>
-    <p>{{ generatedVoyage.description }}</p>
-    <p>{{ generatedVoyage.prix | currency:'EUR' }}</p>
-    <button (click)="saveVoyage()">Save Voyage</button>
-  </div>
-  <button (click)="generateVoyage()">Generate Voyage</button>
