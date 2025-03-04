@@ -1,0 +1,82 @@
+<h2>Créer un nouveau livre</h2>
+
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Titre</label>
+    <input
+      id="title"
+      type="text"
+      formControlName="title"
+      placeholder="Titre du livre"
+      class="form-control"
+    />
+    @if (bookForm.get('title')?.invalid && bookForm.get('title')?.touched) {
+      <div class="error-message">
+        @if (bookForm.get('title')?.errors?.['required']) {
+          <span>Le titre est obligatoire.</span>
+        }
+        @if (bookForm.get('title')?.errors?.['minlength']) {
+          <span>Le titre doit contenir au moins 2 caractères.</span>
+        }
+        @if (bookForm.get('title')?.errors?.['maxlength']) {
+          <span>Le titre ne doit pas dépasser 35 caractères.</span>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="author">Auteur</label>
+    <input
+      id="author"
+      type="text"
+      formControlName="author"
+      placeholder="Nom de l'auteur"
+      class="form-control"
+    />
+    @if (bookForm.get('author')?.invalid && bookForm.get('author')?.touched) {
+      <div class="error-message">
+        @if (bookForm.get('author')?.errors?.['required']) {
+          <span>L'auteur est obligatoire.</span>
+        }
+        @if (bookForm.get('author')?.errors?.['minlength']) {
+          <span>L'auteur doit contenir au moins 5 caractères.</span>
+        }
+        @if (bookForm.get('author')?.errors?.['maxlength']) {
+          <span>L'auteur ne doit pas dépasser 50 caractères.</span>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      formControlName="description"
+      placeholder="Description du livre"
+      class="form-control"
+    ></textarea>
+    @if (bookForm.get('description')?.invalid && bookForm.get('description')?.touched) {
+      <div class="error-message">
+        @if (bookForm.get('description')?.errors?.['required']) {
+          <span>La description est obligatoire.</span>
+        }
+        @if (bookForm.get('description')?.errors?.['minlength']) {
+          <span>La description doit contenir au moins 10 caractères.</span>
+        }
+        @if (bookForm.get('description')?.errors?.['maxlength']) {
+          <span>La description ne doit pas dépasser 255 caractères.</span>
+        }
+      </div>
+    }
+  </div>
+
+  @if (errorMessage) {
+    <div class="error-message">
+      {{ errorMessage }}
+    </div>
+  }
+
+  <button type="submit" [disabled]="bookForm.invalid" class="btn btn-primary">Créer le livre</button>
+</form>
