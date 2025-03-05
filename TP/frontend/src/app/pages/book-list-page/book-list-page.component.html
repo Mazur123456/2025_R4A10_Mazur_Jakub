@@ -1,16 +1,18 @@
 <div class="books-list">
   <h2>Liste des livres</h2>
   <div class="grid">
-    @for (book of books; track book.id){
-    <div class="book-card">
-      <a [routerLink]="['/book', book.id]">
-        <img [src]="book.coverUrl" alt="{{ book.title }} cover" class="book-cover" />
-        <div class="book-info">
-          <h3>{{ book.title }}</h3>
-          <p>{{ book.author }}</p>
-        </div>
+    @for (book of books; track book.id) {
+      <div class="book-item">
+        <a [routerLink]="['/book', book.id]">
+        <h2>{{ book.title }}</h2>
+        <p>{{ book.author }}</p>
+        <p>{{ book.description }}</p>
+        <img [src]="book.coverUrl" alt="{{ book.title }}">
       </a>
+      <button (click)="deleteBook(book.id)">Supprimer</button>
     </div>
+    } @empty {
+      <p>Aucun livre disponible.</p>
     }
   </div>
 </div>

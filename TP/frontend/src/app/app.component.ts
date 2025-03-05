@@ -3,6 +3,8 @@ import { HeaderComponent } from './components/header.component';
 import { FooterComponent } from './components/footer.component';
 import { Component } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-root',
   standalone: true,

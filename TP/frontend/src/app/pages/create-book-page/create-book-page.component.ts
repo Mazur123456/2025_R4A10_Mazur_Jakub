@@ -2,27 +2,29 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { BooksInMemoryService } from '../../services/book-inmemory.service';
+import { BookApiService } from '../../services/book-apiservices';
+import { Book } from '../../models/book';
 @Component({
   selector: 'app-create-book-page',
-  standalone: true, 
-  imports: [ReactiveFormsModule, CommonModule, RouterModule], 
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './create-book-page.component.html',
   styleUrls: ['./create-book-page.component.css']
 })
 export class CreateBookPageComponent {
   bookForm: FormGroup;
-  errorMessage: string | null = null; 
+  errorMessage: string | null = null;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private booksService: BooksInMemoryService 
+    private bookApiService: BookApiService // Déclarez explicitement le type
   ) {
     this.bookForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(35)]],
       author: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
-      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(255)]]
+      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(255)]],
+      coverUrl: ['https://placehold.co/150x200'] // Ajoutez un champ pour l'URL de la couverture
     });
   }
 
@@ -30,23 +32,31 @@ export class CreateBookPageComponent {
     if (this.bookForm.valid) {
       const isConfirmed = confirm('Voulez-vous vraiment créer ce livre ?');
       if (isConfirmed) {
-        const newBook = {
+        const newBook: Book = {
+          id: 0, // L'ID sera généré par le backend
           title: this.bookForm.value.title,
           author: this.bookForm.value.author,
-          description: this.bookForm.value.description
+          description: this.bookForm.value.description,
+          coverUrl: this.bookForm.value.coverUrl
         };
-
-        const bookId = this.booksService.createBook(newBook);
-        if (bookId === null) {
-          this.errorMessage = 'Ce livre existe déjà.'; 
-        } else {
-          console.log('Livre créé avec l\'ID :', bookId);
-          this.errorMessage = null; 
-          this.router.navigate(['']);
-        }
+  
+        console.log('Données du formulaire :', newBook); // Debug
+  
+        this.bookApiService.addBook(newBook).subscribe(
+          (createdBook: Book) => {
+            console.log('Livre créé avec succès :', createdBook); // Debug
+            this.errorMessage = null;
+            this.router.navigate(['']); // Rediriger vers la page d'accueil
+          },
+          (error) => {
+            console.error('Erreur lors de la création du livre :', error); // Debug
+            this.errorMessage = 'Une erreur est survenue lors de la création du livre.';
+          }
+        );
       }
     } else {
       console.log('Formulaire invalide');
+      this.errorMessage = 'Veuillez remplir correctement tous les champs.';
     }
   }
 }
