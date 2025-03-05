@@ -24,7 +24,7 @@ def get_book(book_id):
 @app.route("/books", methods=["POST"])
 def add_book():
     data = request.json
-    
+
     new_id = max(book["id"] for book in books) + 1 if books else 1
     new_book = {
         "id": new_id,
@@ -34,8 +34,8 @@ def add_book():
         "coverUrl": data.get("coverUrl", "https://placehold.co/150x200")
     }
     books.append(new_book)
-    return jsonify(new_book), 201
-
+    return jsonify(new_book), 201  # Renvoie un JSON valide
+    
 @app.route("/books/<int:book_id>", methods=["DELETE"])
 def delete_book(book_id):
     global books

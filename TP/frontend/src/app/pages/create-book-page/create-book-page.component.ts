@@ -18,13 +18,13 @@ export class CreateBookPageComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private bookApiService: BookApiService // Déclarez explicitement le type
+    private bookApiService: BookApiService
   ) {
     this.bookForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(35)]],
       author: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
       description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(255)]],
-      coverUrl: ['https://placehold.co/150x200'] // Ajoutez un champ pour l'URL de la couverture
+      coverUrl: ['https://placehold.co/150x200']
     });
   }
 
@@ -33,20 +33,20 @@ export class CreateBookPageComponent {
       const isConfirmed = confirm('Voulez-vous vraiment créer ce livre ?');
       if (isConfirmed) {
         const newBook: Book = {
-          id: 0, // L'ID sera généré par le backend
+          id: 0,
           title: this.bookForm.value.title,
           author: this.bookForm.value.author,
           description: this.bookForm.value.description,
           coverUrl: this.bookForm.value.coverUrl
         };
-  
+
         console.log('Données du formulaire :', newBook); // Debug
-  
+
         this.bookApiService.addBook(newBook).subscribe(
           (createdBook: Book) => {
             console.log('Livre créé avec succès :', createdBook); // Debug
             this.errorMessage = null;
-            this.router.navigate(['']); // Rediriger vers la page d'accueil
+            this.router.navigate(['']);
           },
           (error) => {
             console.error('Erreur lors de la création du livre :', error); // Debug
